@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*============================================================================
+  [replace with theme name] | Built with Slate
+    - You cannot use native CSS/Sass @imports in this file without a build script
+==============================================================================*/
+
+/*================ UTILS ================*/
+@import url('tools/mixins.scss');
+
+/*================ SETTINGS ================*/
+@import url('settings/variables.scss.liquid');
+
+/*================ IMAGES -================*/
+@import url('global/images.scss.liquid');
+
+/*================ COMMON ================*/
+@import url('global/normalize.scss');
+@import url('global/slate-reset.scss');
+@import url('global/helper-classes.scss');
+@import url('global/grid.scss');
+@import url('global/layout.scss');
+@import url('global/icons.scss');
+@import url('global/rte.scss');
+@import url('global/responsive-tables.scss');
+@import url('global/links-buttons.scss');
+@import url('global/forms.scss');
+@import url('global/blank-states.scss');
+@import url('global/typography.scss');
+
+/*================ MODULES ================*/
+@import url('modules/site-header.scss');
+@import url('modules/site-footer.scss');
+@import url('modules/gift-card-template.scss');
+@import url('modules/product-gallery.scss');
+@import url('modules/home-banner.scss');
+@import url('modules/subpage-banner.scss');
+@import url('modules/centered-text.scss');
+@import url('modules/collection-tabs.scss');
+@import url('modules/cart-table.scss');
+@import url('modules/form.scss');
+@import url('modules/page.scss');
+@import url('modules/page-links.scss');
+@import url('modules/product.scss');
+@import url('modules/about-section.scss');
+@import url('modules/contact-section.scss');

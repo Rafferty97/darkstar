@@ -1,0 +1,27 @@
+<div class="big-button">
+  <a href="{{ section.settings.url }}">{{ section.settings.label }}</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Big button",
+    "settings": [
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "URL"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Big button",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

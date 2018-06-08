@@ -1,0 +1,181 @@
+$product-gutter: 40px;
+
+.product-gallery-section {
+  margin: 60px 0;
+}
+
+.product-gallery {
+  margin: 40px 0;
+  box-sizing: content-box;
+  background-color: white;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    box-sizing: content-box;
+    margin: -20px auto;
+  }
+
+  .product {
+    position: relative;
+    text-align: center;
+    margin: 20px ($product-gutter / 2);
+    transition: transform 0.4s;
+
+    > img {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    .title {
+      @include font-header;
+      color: $color-primary;
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin: 10px 0 0 0;
+      padding: 0;
+    }
+
+    p {
+      padding: 0;
+      line-height: 1.2;
+      margin: 0.8em auto;
+      max-width: 250px;
+    }
+    
+    .price {
+      line-height: 1.4;
+      margin: 5px auto 0;
+      color: lighten($color-primary, 10%);
+    }
+
+    .product-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
+    .detail-window {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-bottom: 100%;
+
+      > div {
+        $margin: 0px;
+        position: absolute;
+        top: $margin;
+        left: $margin;
+        right: $margin;
+        bottom: $margin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.85);
+        // box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        // border-radius: 4px;
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.4s, opacity 0.4s;
+      }
+
+      .rating-heading {
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #444;
+        margin: 10px 0 0 0;
+        line-height: 1;
+      }
+
+      .rating-value {
+        $size: 20px;
+        position: relative;
+        margin: 3px 0 9px 0;
+        width: $size * 5;
+        height: $size;
+
+        &::before, &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          background-image: $img-star-rating;
+          background-size: $size $size;
+        }
+
+        &::before {
+          background-position: 0 0;
+          left: 0;
+        }
+
+        &::after {
+          background-image: $img-star-rating-empty;
+          background-position: 100% 0;
+          right: 0;
+        }
+
+        @for $i from 0 through 10 {
+          &.has-#{$i}-stars::before {
+            width: 0.5 * $i * $size;
+          }
+          &.has-#{$i}-stars::after {
+            width: 0.5 * (10 - $i) * $size;
+          }
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      height: 4px;
+      left: 51%;
+      right: 51%;
+      background-color: $color-primary;
+      transition: left 0.4s, right 0.4s;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+
+      .detail-window > div {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      &::after {
+        left: 30%;
+        right: 30%;
+      }
+    }
+  }
+}
+
+@mixin gallery-size($cols, $width) {
+  @media (min-width: #{(($width + $product-gutter) * $cols) + 80px}) {
+    .product-gallery > div .product {
+      width: $width;
+
+      .title {
+        font-size: (1.6rem / 300px) * $width;
+      }
+    }
+  }
+}
+
+@include gallery-size(1, 250px);
+@include gallery-size(2, 225px);
+@include gallery-size(3, 225px);
+@include gallery-size(3, 250px);
+@include gallery-size(3, 300px);

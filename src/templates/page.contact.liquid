@@ -1,0 +1,105 @@
+<div class="subpage-banner">
+  <div class="page-width"><h1>{{ page_title }}</h1></div>
+</div>
+
+<div style="background-color: white; padding: 1px 0;">
+
+  <div class="contact-section">
+    <div class="page-width">
+      <div class="contact-section--inner">
+        <div class="info">
+          <h3>Darkstar</h3>
+          <p><strong>General enquiries:</strong> info@darkstarcoffee.com.au
+          <p><strong>Order enquiries:</strong> orders@darkstarcoffee.com.au
+          <hr/>
+          <h4>Opening Hours</h4>
+          <p><strong>Mon-Fri:</strong> 8:30am - 5pm</p>
+          <p><strong>Sat:</strong> 8:30am - 1pm</p>
+          <hr/>
+          <h4>Address</h4>
+          <p>Lorem ipsum</p>
+          <hr/>
+          <h4>Phone</h4>
+          <p>Lorem ipsum</p>
+        </div>
+        <div class="map">
+          <div class="map-inner">
+            <div style="margin: 50px 0; text-align: center; font-size: 22px; color: #888;">Map here</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-width" style="margin-top: 60px; margin-bottom: 20px;">
+
+    <div class="rte">
+      {{ page.content }}
+    </div>
+
+    {% form 'contact' %}
+
+      <h3>Get in touch</h3>
+
+      {% if form.posted_successfully? %}
+        <p class="form-success">
+          {{ 'contact.form.post_success' | t }}
+        </p>
+      {% endif %}
+
+      {{ form.errors | default_errors }}
+
+      <div class="fields-wrap">
+
+      <div class="field-wrap">
+        <label for="ContactFormName">{{ 'contact.form.name' | t }}</label><input type="text"
+          name="contact[name]"
+          id="ContactFormName"
+          value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+      </div>
+
+      <div class="field-wrap">
+        <label for="ContactFormEmail">{{ 'contact.form.email' | t }}</label><input type="email"
+          name="contact[email]"
+          id="ContactFormEmail"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          spellcheck="false"
+          autocomplete="off"
+          autocapitalize="off">
+      </div>
+          
+      <div class="field-wrap">
+        <label for="ContactFormPhone">{{ 'contact.form.phone' | t }}</label><input type="tel"
+          name="contact[phone]"
+          id="ContactFormPhone"
+          value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          pattern="[0-9\-]*">
+      </div>
+
+      <div class="field-wrap" style="flex: 0 1 100%;">
+        <label for="ContactFormMessage">{{ 'contact.form.message' | t }}</label><textarea rows="10"
+          name="contact[body]"
+          id="ContactFormMessage">{% if form.body %}
+            {{ form.body }}
+          {% endif %}</textarea>
+      </div>
+
+      <div class="field-wrap" style="flex-grow: 0;">
+        <label>&nbsp;</label>
+        <input type="submit" class="btn" value="{{ 'contact.form.send' | t }}">
+      </div>
+
+      </div>
+
+    {% endform %}
+  </div>
+
+  <!-- <div class="page-links">
+    <div style="background-image: url({{ 'espresso-machine.jpg' | asset_url }});">
+      <a href="/collections/all"><h4>Shop</h4></a>
+    </div>
+    <div style="background-image: url({{ 'coffee1.jpg' | asset_url }});">
+      <a href="/pages/purpose"><h4>Purpose</h4></a>
+    </div>
+  </div> -->
+</div>

@@ -1,0 +1,30 @@
+/*================ General layout styles ================*/
+body,
+html {
+  background-color: $color-body;
+}
+
+body {
+  position: relative;
+  font-family: $font-stack-body;
+  font-weight: $font-weight-body;
+  font-size: $font-size-base;
+  z-index: -2000;
+  padding-top: 1px;
+}
+
+body.parallax .body {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 10px;
+  transform-style: preserve-3d;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-width {
+  @include clearfix();
+  max-width: $width-site;
+  padding: 0 $gutter;
+  margin: 0 auto;
+}

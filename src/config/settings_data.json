@@ -1,0 +1,164 @@
+{
+  "current": {
+    "type_base_size": "16px",
+    "color_primary": "#25395c",
+    "color_secondary": "#bb9852",
+    "color_body_text": "#000",
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "#",
+    "social_facebook_link": "#",
+    "social_pinterest_link": "",
+    "social_instagram_link": "#",
+    "social_snapchat_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "cart_notes_enable": true,
+    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "featured-collection": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Our Singles",
+          "collection": "singles"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/darkstar-logo_5b797cd6-11f1-4180-9b62-5afc52833fc5.png",
+          "logo_max_width": 300,
+          "main_linklist": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/darkstar-logo-white.png"
+        }
+      },
+      "image-banner": {
+        "type": "image-banner",
+        "settings": {
+          "bk": "shopify:\/\/shop_images\/espresso-machine.jpg",
+          "height": 65
+        }
+      },
+      "1519542539568": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Our Blends",
+          "collection": "blends"
+        }
+      },
+      "1519542551989": {
+        "type": "big-button",
+        "settings": {
+          "label": "Go to Store",
+          "url": "shopify:\/\/collections"
+        }
+      },
+      "1519542569653": {
+        "type": "centered-text",
+        "settings": {
+          "bkcol": "",
+          "bk": "shopify:\/\/shop_images\/coffee-shot_2766aa5b-29a6-4603-a2b6-e4ce274c0400.jpg",
+          "title": "Purpose",
+          "summary": "From humble beginnings in 2001, Darkstar Coffee was established with one goal in mind – to provide cafes and their customers with more valve.     Fast forward almost two decades later and that very same spirit is still alive.",
+          "url": "shopify:\/\/pages\/purpose",
+          "dark": true
+        }
+      },
+      "1519542682126": {
+        "type": "centered-text",
+        "settings": {
+          "bkcol": "",
+          "bk": "",
+          "title": "Wholesale",
+          "summary": "Partnering for performance.",
+          "url": "shopify:\/\/pages\/wholesale",
+          "dark": false
+        }
+      },
+      "title-banner": {
+        "type": "title-banner",
+        "settings": {
+          "bk": "shopify:\/\/shop_images\/espresso-blue.jpg"
+        }
+      }
+    },
+    "content_for_index": [
+      "1519542539568",
+      "featured-collection",
+      "1519542551989",
+      "1519542569653",
+      "1519542682126"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "sections": {
+        "collection-list": {
+          "type": "collection-list",
+          "blocks": {
+            "collection-list-0": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "collection-list-1": {
+              "type": "collection",
+              "settings": {
+              }
+            },
+            "collection-list-2": {
+              "type": "collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "collection-list-0",
+            "collection-list-1",
+            "collection-list-2"
+          ],
+          "settings": {
+          }
+        },
+        "featured-collection": {
+          "type": "featured-collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "featured-product": {
+          "type": "featured-product",
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "collection-list",
+        "featured-collection",
+        "featured-product"
+      ]
+    }
+  }
+}

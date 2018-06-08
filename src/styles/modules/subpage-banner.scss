@@ -1,0 +1,88 @@
+.subpage-banner {
+  position: relative;
+  background-position: 50% 50%;
+  background-size: cover;
+  padding-top: 80px;
+  margin-top: 70px;
+  background-color: $color-primary;
+
+  > div {
+    position: relative;
+  }
+
+  h1 {
+    font-family: $font-stack-header;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 4vw;
+    padding: 4vw 0;
+    line-height: 1.3em;
+    margin: 0;
+    color: white;
+    
+    @media (max-width: 1280px) {
+      padding: 50px 0;
+      font-size: 50px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding-top: 40px;
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    padding-top: 80px;
+    h1 {
+      font-size: 42px;
+    }
+  }
+}
+
+.product-banner {
+  position: relative;
+  background-position: 50% 100%;
+  background-size: cover;
+  padding-top: 80px;
+  margin-top: 70px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+    background-image: $img-subpage-triangles;
+    background-size: 110% auto;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  > div {
+    position: relative;
+  }
+
+  h1 {
+    font-family: $font-stack-header;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 6vw;
+    padding: 10vw 0 20vw 0;
+    line-height: 1.3em;
+    margin: 0;
+    color: white;
+
+    @media (max-width: 700px) {
+      font-size: 42px;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 36px;
+      padding: 12.5vw 0 22.5vw 0;
+    }
+  }
+}

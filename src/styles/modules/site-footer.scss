@@ -1,0 +1,144 @@
+$color-primary-lt: $color-secondary; //lighten($color-primary, 40%);
+
+.page-footer {
+  position: relative;
+  background-color: darken($color-primary, 10%);
+
+  .page-footer__inner {
+    color: white;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    position: relative;
+    background-image: $img-footer-sep2;
+    background-size: auto 105%;
+    background-repeat: repeat-x;
+    background-position: 50% -5px;
+    height: 16vw;
+    min-height: 150px;
+    // border-bottom: 4px solid darken($color-primary, 20%);
+  }
+}
+
+.page-footer1 {
+  display: flex;
+  border-bottom: 2px solid $color-primary-lt;
+  padding: 30px 0;
+  flex-wrap: wrap;
+
+  .column {
+    text-align: center;
+    flex: 1 0 0;
+    margin: 20px 0;
+
+    @include media-query('small') {
+      flex: 1 0 100%;
+    }
+  }
+
+  h2 {
+    @include font-header;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0;
+    color: $color-primary-lt;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 1.3em 0 0 0;
+    color: white;
+
+    & + p {
+      margin-top: 0;
+    }
+
+    strong {
+      text-transform: uppercase;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.page-footer2 {
+  padding: 20px 2px;
+  
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 60px;
+    vertical-align: middle;
+  }
+  
+  .page-footer2__logo, a {
+    vertical-align: middle;
+  }
+
+  .page-footer2__logo {
+    width: 160px;
+    margin-right: 10px;
+  }
+
+  a {
+    margin-right: 30px;
+    color: lighten($color-primary, 40%);
+  }
+
+  .page-footer2__social {
+    float: right;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    a {
+      font-size: 30px;
+      margin-right: 0;
+      margin-left: 15px;
+      line-height: 1;
+      vertical-align: middle;
+      color: $color-secondary;
+      transition: color 0.3s;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($color-secondary, 10%);
+      }
+    }
+  }
+
+  @include media-query('small') {
+    text-align: center;
+
+    &::before {
+      display: none;
+    }
+
+    > a {
+      display: block;
+      margin: 20px 0;
+    }
+
+    .page-footer2__social {
+      float: none;
+
+      a {
+        margin: 0 8px;
+      }
+    }
+  }
+}

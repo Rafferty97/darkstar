@@ -1,0 +1,44 @@
+<div class="home-banner">
+  <div class="page-width">
+    <div class="bk" style="background-image: url({{ section.settings.bk | img_url: '2560x' }});">
+      <div>
+        <h2>Lorem ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit et ex in efficitur. In venenatis sagittis metus, in commodo augue lobortis id. Nunc massa metus.</p>
+        <a href="#" class="btn">Do something</a>
+      </div>
+    </div>
+    <div class="box-links">
+      <div class="link">
+        <h2>Item One</h2>
+        <a href="#"></a>
+      </div>
+      <div class="link">
+        <h2>Item Two</h2>
+        <a href="#"></a>
+      </div>
+      <div class="link">
+        <h2>Item Three</h2>
+        <a href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bk",
+        "label": "Background image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image banner",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

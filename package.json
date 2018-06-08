@@ -1,0 +1,10 @@
+{
+  "name": "darkstarcoffee",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@shopify/slate-tools": "0.13.0"
+  },
+  "dependencies": {
+    "instafeed.js": "^1.4.1"
+  }
+}

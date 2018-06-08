@@ -1,0 +1,94 @@
+{%- assign collection = collections[section.settings.collection] -%}
+
+<div class="product-gallery-section">
+
+  {% if section.settings.title != blank %}
+    <h2 class="section-title">{{ section.settings.title | escape }}</h2>
+  {% endif %}
+
+  <div class="product-gallery">
+    <div class="page-width">
+      {% for product in collection.products limit: 3 %}
+        <div class="product">
+
+          {% if product.featured_image != blank %}
+            {{ product.featured_image.src | img_url: '600x600' | img_tag: product.title }}
+          {% endif %}
+
+          <h4 class="title">{{ product.title }}</h4>
+
+          <p class="price">
+            {% if product.compare_at_price > product.price %}
+
+              {% if product.price_varies %}
+                {%- assign sale_price = product.price | money -%}
+                {{ 'products.product.on_sale_from_html' | t: price: sale_price }}
+              {% else %}
+                {{ 'products.product.on_sale' | t }}
+                {{ product.price | money }}
+              {% endif %}
+
+            {% else %}
+
+              {% if product.price_varies %}
+                {%- assign price = product.price | money -%}
+                {{ 'products.product.from_text_html' | t: price: price }}
+              {% else %}
+                {{ product.price | money }}
+              {% endif %}
+
+            {% endif %}
+          </p>
+
+          <p>{{ product.metafields.description.short }}</p>
+
+          {% comment %}
+          <div class="detail-window">
+            <div>
+              {% for field in product.metafields.coffee %}
+                <h5 class="rating-heading">{{ field | first }}</h5>
+                <p class="rating-value has-{{ field | last }}-stars">
+                  <span class="visually-hidden">{{ field | last }} / 5</span>
+                </p>
+              {% endfor %}
+            </div>
+          </div>
+          {% endcomment %}
+
+          <a class="product-link" href="{{ product.url | within: collection }}">See Product</a>
+        </div>
+      {% else %}
+
+        <p>No products in this collection.</p>
+
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Featured collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collection"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured collection",
+        "category": "Collection"
+      }
+    ]
+  }
+
+{% endschema %}

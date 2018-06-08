@@ -1,0 +1,35 @@
+<div class="instagram-feed" id="section-{{ section.id }}">
+  Hello world
+</div>
+
+{% javascript %}
+
+  $('.instagram-feed').each(function (i, e) {
+
+    var id = $(e).attr('id');
+
+    var feed = new Instafeed({
+      target: id,
+      clientId: '057c6bde772f45c8ba54bf770425a70c',
+      get: 'user',
+      userId: '227725892', //'467645450',
+    });
+    feed.run();
+
+  });
+
+{% endjavascript %}
+
+{% schema %}
+  {
+    "name": "Instagram feed",
+    "settings": [
+    ],
+    "presets": [
+      {
+        "name": "Instagram feed",
+        "category": "Social media"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,22 @@
+<div class="subpage-banner" style="background-image: url({{ section.settings.bk | img_url: '2560x' }});">
+  <div class="page-width"><h1>{{ page_title }}</h1></div>
+</div>
+
+{% schema %}
+  {
+    "name": "Title banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bk",
+        "label": "Background image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Title banner",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

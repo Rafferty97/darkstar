@@ -1,0 +1,168 @@
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    border-bottom: 2px solid $color-secondary;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: right;
+    font-size: 15px;
+    line-height: 1.4;
+    padding: 10px 20px 10px 0;
+
+    & + th {
+      width: 120px;
+    }
+
+    &:first-child {
+      text-align: left;
+    }
+  }
+
+  td {
+    position: relative;
+    text-align: right;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 10px 20px 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    &:first-child {
+      width: 140px;
+      text-align: left;
+
+      & + td {
+        text-align: left;
+        padding-right: 40px;
+      }
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+
+    input {
+      width: 60px;
+      padding: 4px 6px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      text-align: right;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $color-secondary;
+      }
+    }
+
+    img {
+      max-width: 120px;
+    }
+
+    .product-title {
+      font-size: 24px;
+      color: $color-primary;
+      text-decoration: none;
+      margin: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .product-variant {
+      margin: 5px 0 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .product-remove {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -12px;
+      width: 24px;
+      height: 24px;
+      background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDIxLjkgMjEuOSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjEuOSAyMS45IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KICA8cGF0aCBkPSJNMTQuMSwxMS4zYy0wLjItMC4yLTAuMi0wLjUsMC0wLjdsNy41LTcuNWMwLjItMC4yLDAuMy0wLjUsMC4zLTAuN3MtMC4xLTAuNS0wLjMtMC43bC0xLjQtMS40QzIwLDAuMSwxOS43LDAsMTkuNSwwICBjLTAuMywwLTAuNSwwLjEtMC43LDAuM2wtNy41LDcuNWMtMC4yLDAuMi0wLjUsMC4yLTAuNywwTDMuMSwwLjNDMi45LDAuMSwyLjYsMCwyLjQsMFMxLjksMC4xLDEuNywwLjNMMC4zLDEuN0MwLjEsMS45LDAsMi4yLDAsMi40ICBzMC4xLDAuNSwwLjMsMC43bDcuNSw3LjVjMC4yLDAuMiwwLjIsMC41LDAsMC43bC03LjUsNy41QzAuMSwxOSwwLDE5LjMsMCwxOS41czAuMSwwLjUsMC4zLDAuN2wxLjQsMS40YzAuMiwwLjIsMC41LDAuMywwLjcsMC4zICBzMC41LTAuMSwwLjctMC4zbDcuNS03LjVjMC4yLTAuMiwwLjUtMC4yLDAuNywwbDcuNSw3LjVjMC4yLDAuMiwwLjUsMC4zLDAuNywwLjNzMC41LTAuMSwwLjctMC4zbDEuNC0xLjRjMC4yLTAuMiwwLjMtMC41LDAuMy0wLjcgIHMtMC4xLTAuNS0wLjMtMC43TDE0LjEsMTEuM3oiIGZpbGw9IiM2YjZiNmIiLz4KPC9zdmc+Cg==);
+      background-size: 12px 12px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      font-size: 0;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: 2px solid #e0e0e0;
+  }
+}
+
+.cart-summary {
+  float: right;
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 4px;
+
+  p, label {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 5px 0;
+  }
+
+  p.subtotal {
+    font-size: 32px;
+  }
+
+  p.taxes {
+    color: #888;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    height: 100px;
+    resize: none;
+  }
+
+  > div + div {
+    margin-left: 40px;
+  }
+
+  input[type="submit"] {
+    display: block;
+    background-color: $color-secondary;
+    padding: 12px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1.2;
+    width: 150px;
+    text-align: center;
+    margin: 8px 0;
+
+    &:hover {
+      background-color: darken($color-secondary, 5%);
+    }
+
+    &.cart-update {
+      background-color: transparent;
+      border: 1px solid $color-secondary;
+      padding: 11px;
+      color: $color-secondary;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+}

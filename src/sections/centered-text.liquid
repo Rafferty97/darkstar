@@ -1,0 +1,51 @@
+<div class="centered-text-section{% if section.settings.dark %} dark{% endif %}" style="background-color: {{ section.settings.bkcol }};{% if section.settings.bk != blank %} background-image: url({{ section.settings.bk | img_url: '2560x' }});{% endif %}">
+  <div>
+    <h3>{{ section.settings.title }}</h3>
+    <p>{{ section.settings.summary | newline_to_br }}</p>
+    <a class="btn" href="{{ section.settings.url }}">Learn more</a>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Centered text",
+    "settings": [
+      {
+        "type": "color",
+        "id": "bkcol",
+        "label": "Background color"
+      },
+      {
+        "type": "image_picker",
+        "id": "bk",
+        "label": "Background image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "summary",
+        "label": "Summary"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Link"
+      },
+      {
+        "type": "checkbox",
+        "id": "dark",
+        "label": "Dark"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Centered text",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

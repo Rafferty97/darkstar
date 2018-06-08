@@ -1,0 +1,72 @@
+<footer class="page-footer">
+  <div class="page-footer__inner">
+    <div class="page-width">
+      <div class="page-footer1">
+        <div class="column">
+          <!--<h2>Address</h2>
+          <p>Unit 5/4 Pritchard St<br/>O'Connor WA 6163</p> -->
+          <h2>About</h2>
+          <p><a href="/pages/purpose#cafe-family">Caf&eacute; family</a></p>
+          <p><a href="/pages/purpose#purpose">Purpose</a></p>
+          <p><a href="/pages/purpose#roasting-hq">Roasting HQ</a></p>
+        </div>
+        <div class="column">
+          <h2>Shop</h2>
+          <p><a href="#">Espresso</a></p>
+          <p><a href="#">Filter</a></p>
+          <p><a href="#">Limited Release</a></p>
+          <p><a href="#">Subscription</a></p>
+        </div>
+        <div class="column">
+          <h2>Wholesale</h2>
+          <p><a href="/pages/wholesale#training">Training</a></p>
+          <p><a href="/pages/wholesale#coffee-supply">Coffee</a></p>
+          <p><a href="/pages/wholesale#equipment">Equipment</a></p>
+        </div>
+        <div class="column">
+          <h2>Connect</h2>
+          <p><a href="tel:0861073539">08 6107 3539</a></p>
+          <p><a href="mailto:info@darkstarcoffee.com.au">info@darkstarcoffee.com.au</a></p>
+          <p>
+            104 Frobisher St<br/>
+            Osbourne Park 6017
+          </p>
+        </div>
+      </div>
+      <div class="page-footer2">
+        <a href="/" style="text-decoration: none;">
+          <img class="page-footer2__logo"
+            src="{{ section.settings.logo | img_url: '320x' }}"
+            alt="{{ section.settings.logo.alt | default: shop.name }}" />
+        </a>
+        <div class="page-footer2__social">
+          {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
+          {% for social in social_accounts %}
+            {%- assign social_handle = social | handleize -%}
+            {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
+            {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
+
+            {% if settings[social_link] != blank %}
+              <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">{% include social_icon %}<span class="icon-fallback-text">{{ social }}</span></a>
+            {% endif %}
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      }
+    ]
+  }
+
+{% endschema %}
